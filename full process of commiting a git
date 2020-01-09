@@ -1,0 +1,74 @@
+full procedure to commit codes:
+
+
+1. Create a feature branch in gitlab
+
+2. $git pull
+	(fetch+[merge if conflicts])
+	i would get the newest version from the developer branch: 
+	-> * [new branch]  feature/Houfu_test
+	-> now I would have everything from the main branch (up to the newest version), on my feature branch.
+	(if i am not on the developer branch,
+	to get there, i can use $git checkout-, to get to the one ealier branch)
+	if pull not work (there is conflict, but not urs)
+	git merge --abort
+	git checkout develope
+	git branch --D
+	git pull
+	
+	
+3. Checkout the branch I want to edit(from the remote gitlab to your local)
+	$git checkout feature/Houfu_Test  
+	-> now the (developer) would become (feature/Houfu_Test)
+
+4. Add a new folder and then a new file
+
+5. Make changes on the file, write some random js code like helloworld
+
+6. Stage the changes
+	before staging: -> git status: untracked file present (file name red)
+	after staging: -> git status: changes to be commited (file name green)
+	or can use git add.
+
+7. Commit the changes
+	$git commit
+	i\ some command like [HC]HSIDHAI312 Wroking on xxx\ ESC\ shift+; \ wq
+	OR permenant commit: 
+	$git commit -m [HC] [CHADHA-929] feat: adding api error
+	-> now the changes are commited to my local
+
+8. Push the change from local to remote, but still in feature branch, not in main branch yet.
+	$git push
+	-> now the changes are saved to my remote on gitlab
+	(i can see my file and code on the gitlab now, but only under my branch)
+
+9. Rebase
+	if you and another person changed the same line, the computer would ask you which version to keep
+	(under source control tab)
+	This has to be done before the final merge.
+
+10. Merge request
+	complete a list of things that prove your code is funtioning well under certain conditions, 
+	like: for both IOS and Android. 
+
+11. Merge
+	only some people could approve the merge;
+	After they approve your merge,
+	your feature branch would be in the main branch!
+
+-------------------
+
+stage & commit : save changes on your local.
+push: save the new changes in local to remote.
+pull: fetch+(if there is a conflict)merge. from main to feature branch.
+
+git checkout. 
+deleting everything that are not staged
+
+git rebase develop
+git push -f 
+*account
+*account*
+
+
+
